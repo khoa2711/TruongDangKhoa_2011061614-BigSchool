@@ -21,5 +21,6 @@ namespace TruongDangKhoa_2011061614.Models
         [Required]
         public byte CategoryId { get; set; }    
     }
+
    
 }

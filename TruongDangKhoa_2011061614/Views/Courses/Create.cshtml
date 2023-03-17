@@ -5,27 +5,41 @@
 }
 
 <h2>Create</h2>
-<form>
+
+
+    @using (Html.BeginForm("Create", "Courses"))
+    {
+        @Html.AntiForgeryToken()
     <div class="form-group">
         @Html.LabelFor(m => m.Place)
         @Html.TextBoxFor(m => m.Place, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=>m.Place)
     </div>
-</form>
-<form>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Date)
-        @Html.TextBoxFor(m => m.Date, new { @class = "form-control"})
-    </div>
-    <div class="form-group"
-        @Html.LabelFor(m => m.Time)
-        @Html.TextBoxFor(m => m.Time, new { @class = "form-control"})
-    </div>
-    <div class="form-group"
-        @Html.LabelFor(m => m.Category)
-        @Html.DropDownListFor(m => m.Categories,
-            new SelectList(Model.Categories, "Id", "Name"),"", new { @class = "form-control"})
-    </div>
-    <div class="form-group"</div>
-    <div class="form-group"</div>
 
-</form>
+
+    <div style=" margin-top:10px;" class="form-group">
+        @Html.LabelFor(m => m.Date)
+        @Html.TextBoxFor(m => m.Date, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=>m.Date)
+    </div>
+
+    <div style=" margin-top:10px;" class="form-group">
+        @Html.LabelFor(m => m.Time)
+        @Html.TextBoxFor(m => m.Time, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Time)
+    </div>
+
+    <div style=" margin-top:10px;" class="form-group">
+        @Html.LabelFor(m => m.Category)
+        @Html.DropDownListFor(m => m.Category,
+           new SelectList(Model.Categories, "Id", "Name"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Category)
+    </div>
+
+    
+    <button type="submit" value="Save" style=" margin-top:20px;" class="btn btn-primary"> Save</button>
+    }
+    @section scripts
+    {
+        @Scripts.Render("~/bundles/jqueryval");    
+    } 

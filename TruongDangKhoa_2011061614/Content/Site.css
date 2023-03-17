@@ -18,3 +18,39 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+    background-color: rgb(246 13 13 / 55%);
+
+    border-color: #fff;
+}
+
+.navbar {
+    background-color: rgb(246 13 13 / 55%);
+}
+a {
+    color: var(--bs-link-color);
+    text-decoration: underline;
+    margin-left: 15px;
+}
+
+.course{
+    list-style:none;
+}
+.course > li {
+        position: relative;
+        margin-bottom: 30px;
+    }
+    .course > li .date {
+        text-align: center;
+        background-color: aquamarine;
+        color: aliceblue;
+        width: 60px;
+        border-radius: 8px;
+    }
+    .course > li .details {
+        position: absolute;
+        top: 0;
+        left: 70px;
+    }
